@@ -1,0 +1,14 @@
+#========================================spring config=====================================  
+spring:
+  profiles:
+    active: dev
+  application:
+    name: base-search
+  devtools:
+    remote:
+      restart:
+        enabled: false
+#========================================mybatis config=====================================
+mybatis:
+  type-aliases-package: com.sly.blog.base.search.model
+  mapper-locations: classpath:mapper/*.xml

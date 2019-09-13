@@ -1,0 +1,24 @@
+#========================================spring config=====================================  
+spring:
+  profiles:
+    active: dev
+  application:
+    name: business-blog
+  devtools:
+    remote:
+      restart:
+        enabled: false
+#========================================feign config=====================================
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ReadTimeout: 120000 #处理超时时间 默认5秒
+  ConnectTimeout: 120000 #连接超时时间 默认2秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000 #断路切换超时   

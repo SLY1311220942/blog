@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sly</groupId>
+	<artifactId>blog</artifactId>
+	<version>${blog.version}</version><!-- 0.0.1-SNAPSHOT -->
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<blog.version>0.0.1-SNAPSHOT</blog.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- seata -->
+			<dependency>
+				<groupId>io.seata</groupId>
+				<artifactId>seata-all</artifactId>
+				<version>0.6.1</version>
+			</dependency>
+			<!-- mybatis starter -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+			<!-- druid -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.1.20</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>plugin-common</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>plugin-xss-filter</artifactId>
+				<version>1.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>common</artifactId>
+				<version>${blog.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>base-blog-api</artifactId>
+				<version>${blog.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>base-user-api</artifactId>
+				<version>${blog.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>base-search-api</artifactId>
+				<version>${blog.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sly</groupId>
+				<artifactId>base-common-api</artifactId>
+				<version>${blog.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>../common</module>
+		<module>../base-blog</module>
+		<module>../base-blog-api</module>
+		<module>../base-user</module>
+		<module>../base-user-api</module>
+		<module>../business-blog</module>
+		<module>../business-search</module>
+		<module>../business-user</module>
+	</modules>
+</project>
